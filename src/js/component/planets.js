@@ -1,8 +1,14 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState, useEffect, useContext } from "react";
 import { getAllPlanets } from "./api";
+import { FavoritesContext } from "./favorites";
+import {BiBookmarkHeart} from 'react-icons/bi';
+import "../../styles/favorites.css";
+
 
 export const Planets = () => {
   const [apiPlanets, setapiPlanets] = useState([]);
+  const [fav, setfav] = useState(false);
+  const {favorites, setfavorites} = useContext(FavoritesContext);
 
   useEffect(()=>{
     const fn = async ()=> {
@@ -10,6 +16,17 @@ export const Planets = () => {
       return setapiPlanets(applanets);
     };
     fn();
+
+    const favsList = (item)=>{
+      const newlist = [...favorites + item ];
+      setfavorites(newlist);
+      return console.log(list.map((x,i)=> <li key={i}>{x}</li>));
+  };
+
+  const save = (item) => {
+    let current = fav;
+    return setfav( current !== false ? false:true), favsList(item);
+};
 
   },[]);
     return (
@@ -24,10 +41,12 @@ export const Planets = () => {
   <div className="card-body">
     <h5 className="card-title">{x.name}</h5>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
+    <a href={"/planets/" + (i + 1)} className="btn btn-primary">Learn More</a>
+    <BiBookmarkHeart onClick={()=> save(x.name)} className={fav === true ? "saveIcon save" : "saveIcon"}/>
   </div></div></div>)}
 </div>
 </div>
+
         </>
     );
 };

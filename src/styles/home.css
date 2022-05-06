@@ -1,0 +1,35 @@
+
+.bodyimage {
+    background-image: url('https://wallpaperaccess.com/full/2828899.jpg');
+    width: 2000px;
+    height: 960px;
+    margin-left: -20%;
+    margin-top: 0px;
+    padding-top:0px;
+    z-index: -1;
+    position: absolute;
+}
+
+.start {
+    position: relative;
+    color: white;
+}
+
+.header{
+    font-size: 40px;
+    font-family: monospace;
+    color: white;
+    padding-top:10%;
+}
+h2{
+    font-size: 40px;
+    font-family: monospace;
+    color: white;
+    padding-top:1%;
+}
+
+.highlight {
+    color: darkblue;
+    background: rgba(255,255,255,.3);
+}
+

@@ -14,6 +14,8 @@ import { Ships } from "./component/ships";
 import { Planets } from "./component/planets";
 import { Character } from "./component/character";
 import { FavoritesContext } from "./component/favorites";
+import { SinglePlanet } from "./singleplanet";
+import { SingleCharacter } from "./component/singlecharacter";
 
 //create your first component
 const Layout = () => {
@@ -46,14 +48,20 @@ const Layout = () => {
 						<Route exact path ="/planets">
 							<Planets/>
 						</Route>
+						<Route exact path ="/planets/:id">
+							<SinglePlanet/>
+						</Route>
 						<Route exact path ="/character">
 							<Character/>
+						</Route>
+						<Route exact path ="/character/:id">
+							<SingleCharacter/>
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
-					<Footer />
+					
 				</ScrollToTop>
 				</FavoritesContext.Provider>
 			</BrowserRouter>

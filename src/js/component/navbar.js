@@ -3,22 +3,17 @@ import { Link } from "react-router-dom";
 import { FavoritesContext } from "./favorites";
 
 
+
 export const Navbar = () => {
 	const {favorites, setfavorites} = useContext(FavoritesContext);
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<span className="navbar-brand mb-0 h1 mx-3">Home</span>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div>
+
 			<div>
-				<Link to ="/cards">
-					<button type="button" className="btn btn-primary mx-2">Cards</button>
-				</Link>
+
 				<Link to ="/ships">
 					<button type="button" className="btn btn-success mx-2">Ships</button>
 				</Link>
@@ -33,7 +28,7 @@ export const Navbar = () => {
                         href="#"
                         role="button"
                         aria-expanded="false"></a>
-                        <ul className="dropdown-menu"><li>{favorites}</li></ul>
+                        <ul className="dropdown-menu">{favorites.map((x,i)=><li key={i} >{x}</li>)}</ul>
 </button>
 			</div>
 
