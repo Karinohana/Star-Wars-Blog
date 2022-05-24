@@ -38,10 +38,10 @@ export const Character = () => {
           </div>
           <div className="row">
             { apiCharacter.map((x , i)=> <div  key = {i} className = "col"><div className="card" style={{width: "18rem"}}>
-  <img src="https://lumiere-a.akamaihd.net/v1/images/r2-d2-main_f315b094.jpeg?region=429%2C0%2C538%2C536&width=320" className="card-img-top" alt="..."/>
+  <img src={x.gender} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{x.name}</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p className="card-text"> {x.name}'s hair color is {x.hair_color}. </p>
     <a href={"/character/"+ (i + 1)} className="btn btn-primary">Learn More</a>
     <BiBookmarkHeart onClick={()=> save(x.name)} className={fav === true ? "saveIcon save" : "saveIcon"}/>
   </div></div></div>)}
