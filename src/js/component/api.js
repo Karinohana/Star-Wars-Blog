@@ -7,10 +7,10 @@ export async function getAllShips() {
 }
 export async function getAllPlanets() {
     const response = await fetch(
-        "https://swapi.dev/api/planets"
+        "https://3000-karinohana-starwarspyth-pw3nulofsdq.ws-us46.gitpod.io/planets"
     );
     const payload = await response.json();
-    return payload.results
+    return payload
 }
 export async function getAllCharacters() {
     const response = await fetch(
@@ -22,10 +22,10 @@ export async function getAllCharacters() {
 
 export async function getSinglePlanet(i) {
     const response = await fetch(
-        "https://swapi.dev/api/planets/" + i 
+        "https://3000-karinohana-starwarspyth-pw3nulofsdq.ws-us46.gitpod.io/planets/" + i 
     );
     const payload = await response.json();
-    return payload
+    return payload.planets
 }
 
 export async function getSingleCharacter(i) {

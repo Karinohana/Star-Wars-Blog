@@ -18,19 +18,15 @@ const params = useParams();
     );
     return(
         <>
-                <div className = "start">
-        <div className = "bodyimage"></div>
-        <h1 className = "mx-3"><b className = "highlight">{planets !== null ? planets.name : " "} </b> Planet Details</h1>
-        <h1 className = "mx-3">  Planet Climate <b className = "highlight">{planets !== null ? planets.climate : " "}</b></h1>
-        <h1 className = "mx-3">  Planet Terrain <b className = "highlight">{planets !== null ? planets.terrain : " "}</b></h1>
-        <h1 className = "mx-3">  Planet Population <b className = "highlight"> {planets !== null ? planets.population : " "}</b></h1>
-
-
-
-
-</div>
-
-
+    <div>hello</div>
+        <div>
+        <h1> <b> { planets !== null ? planets.name : " " }</b> Details</h1>
+        <div>
+        <img src={planets !== null ? planets.image2 : " " } className="lol" />
+        <h3> <b >{ planets !== null ? planets.description : " " }</b> </h3>
+        <br></br>
+        </div>
+        </div>
         </>
     );
 };
