@@ -18,15 +18,14 @@ const params = useParams();
     );
     return(
         <>
-        <div className = "start">
-        <div className = "bodyimage">
+    <div></div>
+        <div>
+        <h1> <b> { character !== null ? character.name : " " }</b> Details</h1>
+        <div>
+        <img src={character !== null ? character.image2 : " " } className="lol" />
+        <h3> <b >{ character !== null ? character.description : " " }</b> </h3>
+        <br></br>
         </div>
-        
-        <h1 className = "mx-3"><b className = "highlight">{character !== null ? character.name : " "}</b> Details</h1>
-        <h1 className = "mx-3"> Height <b className = "highlight">{character !== null ? character.height : " "}</b></h1>
-        <h1 className = "mx-3"> Gender <b className = "highlight">{character !== null ? character.gender : " "}</b></h1>
-        <h1 className = "mx-3"> Hair Color <b className = "highlight">{character !== null ? character.hair_color : " "}</b></h1>
-        <h1 className = "mx-3"> Eye Color <b className = "highlight">{character !== null ? character.eye_color : " "}</b></h1>
         </div>
         </>
     );
